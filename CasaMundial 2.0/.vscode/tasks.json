@@ -1,0 +1,49 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Casa Mundial: preparar entorno Python",
+            "type": "shell",
+            "command": "$python = Join-Path '${workspaceFolder}' '.venv\\Scripts\\python.exe'; if (-not (Test-Path -LiteralPath $python)) { py -3 -m venv (Join-Path '${workspaceFolder}' '.venv'); if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE } }; & $python -m pip install -r (Join-Path '${workspaceFolder}' 'requirements.txt'); exit $LASTEXITCODE",
+            "options": {
+                "shell": {
+                    "executable": "powershell.exe",
+                    "args": [
+                        "-NoProfile",
+                        "-ExecutionPolicy",
+                        "Bypass",
+                        "-Command"
+                    ]
+                },
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Casa Mundial: iniciar API",
+            "type": "shell",
+            "command": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+            "args": [
+                "main.py"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "dependsOn": "Casa Mundial: preparar entorno Python",
+            "dependsOrder": "sequence",
+            "isBackground": true,
+            "problemMatcher": {
+                "owner": "casa-mundial-api",
+                "pattern": {
+                    "regexp": "^(.*)$",
+                    "message": 1
+                },
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": "Uvicorn running on",
+                    "endsPattern": "Application startup complete\\."
+                }
+            }
+        }
+    ]
+}

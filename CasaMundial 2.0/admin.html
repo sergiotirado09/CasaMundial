@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#0d5c63">
+    <title>Administrar base de datos | Casa Mundial</title>
+    <link rel="stylesheet" href="/admin.css">
+    <script src="/admin.js" defer></script>
+</head>
+<body>
+    <header class="admin-header">
+        <a class="admin-brand" href="/" aria-label="Volver a Casa Mundial">
+            <span class="admin-brand-mark">N</span>
+            <span>Casa<span>Mundial</span></span>
+        </a>
+        <div class="admin-header-actions">
+            <span class="local-badge">Panel local</span>
+            <a class="back-link" href="/">Volver al sitio</a>
+        </div>
+    </header>
+
+    <main class="admin-layout">
+        <aside class="table-sidebar" aria-labelledby="tablesHeading">
+            <div class="sidebar-heading">
+                <span class="eyebrow">AIVEN MYSQL</span>
+                <h1 id="tablesHeading">Objetos</h1>
+                <p id="databaseName" class="database-name">Conectando...</p>
+            </div>
+            <p id="objectsStatus" class="objects-status" role="status" aria-live="polite">
+                Cargando tablas...
+            </p>
+            <nav id="tableList" class="table-list" aria-label="Tablas de la base de datos"></nav>
+        </aside>
+
+        <section class="table-workspace" aria-labelledby="tableTitle">
+            <div class="workspace-top">
+                <div>
+                    <span class="eyebrow">EXPLORADOR DE DATOS</span>
+                    <h2 id="tableTitle">Selecciona una tabla</h2>
+                    <p id="tableDescription" class="table-description">
+                        Consulta las columnas y administra sus registros.
+                    </p>
+                </div>
+                <div class="workspace-actions">
+                    <button id="refreshButton" class="button button-secondary" type="button" disabled>
+                        Actualizar
+                    </button>
+                    <button id="createButton" class="button button-primary" type="button" disabled>
+                        Nuevo registro
+                    </button>
+                </div>
+            </div>
+
+            <p id="tableFeedback" class="feedback" role="status" aria-live="polite"></p>
+
+            <div class="table-summary">
+                <p id="columnSummary">Selecciona un objeto para empezar.</p>
+                <p id="rowSummary"></p>
+            </div>
+
+            <div class="data-table-wrapper">
+                <table class="data-table">
+                    <thead id="rowsHead"></thead>
+                    <tbody id="rowsBody"></tbody>
+                </table>
+            </div>
+
+            <div class="pagination">
+                <button id="previousPage" class="button button-secondary" type="button" disabled>
+                    Anterior
+                </button>
+                <span id="pageSummary" aria-live="polite"></span>
+                <button id="nextPage" class="button button-secondary" type="button" disabled>
+                    Siguiente
+                </button>
+            </div>
+
+            <p class="safety-note">
+                Los cambios se guardan directamente en Aiven. Las vistas son de
+                solo lectura; las filas relacionadas respetan las restricciones
+                de la base de datos.
+            </p>
+        </section>
+    </main>
+
+    <dialog id="rowDialog" class="row-dialog" aria-labelledby="dialogTitle">
+        <form id="rowForm" class="row-form">
+            <div class="dialog-heading">
+                <div>
+                    <span class="eyebrow">EDITOR DE REGISTROS</span>
+                    <h2 id="dialogTitle">Nuevo registro</h2>
+                </div>
+                <button id="closeDialog" class="icon-button" type="button" aria-label="Cerrar">
+                    &times;
+                </button>
+            </div>
+            <p id="dialogHelp" class="dialog-help"></p>
+            <div id="formFields" class="form-fields"></div>
+            <p id="formFeedback" class="feedback" role="status" aria-live="polite"></p>
+            <div class="form-actions">
+                <button id="cancelDialog" class="button button-secondary" type="button">
+                    Cancelar
+                </button>
+                <button id="saveRow" class="button button-primary" type="submit">
+                    Guardar
+                </button>
+            </div>
+        </form>
+    </dialog>
+</body>
+</html>

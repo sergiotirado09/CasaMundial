@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Casa Mundial | Inmobiliaria en Medellín</title>
+    <meta
+        name="description"
+        content="Encuentra casas, apartamentos y propiedades en venta y alquiler en Medellín. Tu próximo hogar comienza aquí."
+    >
+    <meta name="theme-color" content="#0d5c63">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Casa Mundial | Inmobiliaria en Medellín">
+    <meta property="og:description" content="Compra, vende y arrienda propiedades con información clara y segura.">
+
+    <link
+        rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🏠%3C/text%3E%3C/svg%3E"
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="main.js" defer></script>
+</head>
+
+<body>
+
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+    <!-- ===================== ENCABEZADO ===================== -->
+    <header class="header" id="inicio">
+        <div class="container nav-container">
+
+            <a href="#inicio" class="logo" aria-label="Casa Mundial, ir al inicio">
+                <span class="logo-icon" aria-hidden="true">N</span>
+                <span>Casa<span>Mundial</span></span>
+            </a>
+
+            <nav class="nav" id="mainNav" aria-label="Navegación principal">
+                <a href="#inicio">Inicio</a>
+                <a href="#propiedades">Propiedades</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#nosotros">Nosotros</a>
+                <a href="#mision-vision">Misión y visión</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+
+            <div class="header-actions">
+                <a class="btn btn-sm admin-link" id="adminLink" href="/admin" hidden>
+                    Administrar base
+                </a>
+                <button type="button" class="btn btn-primary btn-sm" data-open-auth>
+                    Iniciar sesión
+                </button>
+
+                <button
+                    type="button"
+                    class="menu-toggle"
+                    id="menuToggle"
+                    aria-label="Abrir menú"
+                    aria-controls="mainNav"
+                    aria-expanded="false"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+
+    <main id="contenido">
+
+        <!-- ===================== HERO + BUSCADOR ===================== -->
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-overlay"></div>
+
+            <div class="container hero-content">
+                <span class="eyebrow">TU PRÓXIMO HOGAR TE ESTÁ ESPERANDO</span>
+
+                <h1 id="hero-title">
+                    Encuentra el lugar
+                    <span>que quieres llamar hogar.</span>
+                </h1>
+
+                <p>
+                    Explora propiedades cuidadosamente seleccionadas
+                    para comprar, vender o alquilar.
+                </p>
+
+                <div class="search-box">
+
+                    <div class="search-tabs" role="group" aria-label="Tipo de operación">
+                        <button type="button" class="search-tab" data-operacion="venta" aria-pressed="false">
+                            Comprar
+                        </button>
+                        <button type="button" class="search-tab" data-operacion="alquiler" aria-pressed="true">
+                            Alquilar
+                        </button>
+                        <button type="button" class="search-tab" data-operacion="nuevo" aria-pressed="false">
+                            Proyectos nuevos
+                        </button>
+                    </div>
+
+                    <form id="searchForm">
+
+                        <div class="search-field">
+                            <label for="searchLocation">Ubicación</label>
+                            <div class="input-wrapper">
+                                <span aria-hidden="true">📍</span>
+                                <input
+                                    type="text"
+                                    id="searchLocation"
+                                    placeholder="Ciudad, barrio o zona"
+                                    autocomplete="off"
+                                >
+                            </div>
+                        </div>
+
+                        <div class="search-field">
+                            <label for="searchType">Tipo de propiedad</label>
+                            <div class="input-wrapper">
+                                <span aria-hidden="true">⌂</span>
+                                <select id="searchType">
+                                    <option value="todos">Todas</option>
+                                    <option value="apartamento">Apartamento</option>
+                                    <option value="casa">Casa</option>
+                                    <option value="oficina">Oficina</option>
+                                    <option value="local">Local comercial</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="search-field">
+                            <label for="searchPrice">Precio máximo</label>
+                            <div class="input-wrapper">
+                                <span aria-hidden="true">$</span>
+                                <select id="searchPrice">
+                                    <option value="todos">Sin límite</option>
+                                    <option value="300">Hasta $300M</option>
+                                    <option value="500">Hasta $500M</option>
+                                    <option value="800">Hasta $800M</option>
+                                    <option value="1000">Hasta $1.000M</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="search-button">
+                            <span>Buscar</span>
+                            <span aria-hidden="true">⌕</span>
+                        </button>
+
+                    </form>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ===================== BENEFICIOS ===================== -->
+        <section class="benefits" aria-label="Por qué elegirnos">
+            <div class="container benefits-grid">
+
+                <div class="benefit reveal">
+                    <div class="benefit-icon" aria-hidden="true">✓</div>
+                    <div>
+                        <strong>Propiedades verificadas</strong>
+                        <p>Información clara y confiable.</p>
+                    </div>
+                </div>
+
+                <div class="benefit reveal">
+                    <div class="benefit-icon" aria-hidden="true">◆</div>
+                    <div>
+                        <strong>Asesoría personalizada</strong>
+                        <p>Te acompañamos durante todo el proceso.</p>
+                    </div>
+                </div>
+
+                <div class="benefit reveal">
+                    <div class="benefit-icon" aria-hidden="true">★</div>
+                    <div>
+                        <strong>Experiencia inmobiliaria</strong>
+                        <p>Soluciones pensadas para ti.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ===================== PROPIEDADES ===================== -->
+        <section class="properties section" id="propiedades" aria-labelledby="properties-title">
+            <div class="container">
+
+                <div class="section-header">
+                    <div>
+                        <span class="section-label">PROPIEDADES DESTACADAS</span>
+                        <h2 id="properties-title">Encuentra una propiedad que encaje contigo</h2>
+                    </div>
+
+                    <a href="#contacto" class="view-all">Consultar más opciones →</a>
+                </div>
+
+                <!-- Las tarjetas se cargan desde la API conectada a Aiven. -->
+                <div class="properties-grid" id="propertiesGrid"></div>
+                <p class="properties-feedback" id="propertiesFeedback" role="status" aria-live="polite" hidden></p>
+
+                <div class="no-results" id="noResults" role="status" hidden>
+                    <h3>No encontramos propiedades</h3>
+                    <p>Prueba cambiando los filtros de búsqueda.</p>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ===================== SERVICIOS ===================== -->
+        <section class="services section" id="servicios" aria-labelledby="services-title">
+            <div class="container">
+
+                <div class="section-header centered">
+                    <span class="section-label">NUESTROS SERVICIOS</span>
+
+                    <h2 id="services-title">
+                        Todo lo que necesitas para tomar
+                        una buena decisión
+                    </h2>
+
+                    <p>
+                        Te acompañamos desde la búsqueda hasta la
+                        entrega de las llaves.
+                    </p>
+                </div>
+
+                <div class="services-grid">
+
+                    <article class="service-card reveal">
+                        <div class="service-icon" aria-hidden="true">⌂</div>
+                        <h3>Compra de vivienda</h3>
+                        <p>
+                            Encuentra propiedades seleccionadas
+                            de acuerdo con tus necesidades y presupuesto.
+                        </p>
+                        <a href="#contacto">Conocer más →</a>
+                    </article>
+
+                    <article class="service-card reveal">
+                        <div class="service-icon" aria-hidden="true">♢</div>
+                        <h3>Arriendo</h3>
+                        <p>
+                            Opciones de vivienda y espacios comerciales
+                            para diferentes estilos de vida.
+                        </p>
+                        <a href="#contacto">Conocer más →</a>
+                    </article>
+
+                    <article class="service-card reveal">
+                        <div class="service-icon" aria-hidden="true">↗</div>
+                        <h3>Venta de propiedades</h3>
+                        <p>
+                            Valorizamos y promocionamos tu propiedad
+                            para ayudarte a encontrar al comprador ideal.
+                        </p>
+                        <a href="#contacto">Conocer más →</a>
+                    </article>
+
+                    <article class="service-card reveal">
+                        <div class="service-icon" aria-hidden="true">◉</div>
+                        <h3>Asesoría inmobiliaria</h3>
+                        <p>
+                            Orientación profesional para que cada
+                            decisión sea segura y transparente.
+                        </p>
+                        <a href="#contacto">Hablar con un asesor →</a>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ===================== NOSOTROS ===================== -->
+        <section class="about section" id="nosotros" aria-labelledby="about-title">
+            <div class="container about-grid">
+
+                <div class="about-image">
+                    <img
+                        src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1000&q=80"
+                        alt="Asesor inmobiliario atendiendo a un cliente"
+                        loading="lazy"
+                        decoding="async"
+                    >
+
+                    <div class="experience-card">
+                        <strong>+10</strong>
+                        <span>años de experiencia</span>
+                    </div>
+                </div>
+
+                <div class="about-content reveal">
+                    <span class="section-label">SOBRE CASA MUNDIAL</span>
+
+                    <h2 id="about-title">
+                        Más que propiedades,
+                        construimos nuevas oportunidades.
+                    </h2>
+
+                    <p>
+                        Somos una inmobiliaria enfocada en conectar
+                        personas con espacios que realmente se adapten
+                        a sus proyectos de vida.
+                    </p>
+
+                    <p>
+                        Nuestro equipo combina conocimiento del mercado,
+                        atención personalizada y herramientas digitales
+                        para ofrecer una experiencia inmobiliaria sencilla,
+                        segura y transparente.
+                    </p>
+
+                    <div class="about-stats">
+                        <div>
+                            <strong>1.500+</strong>
+                            <span>Propiedades gestionadas</span>
+                        </div>
+                        <div>
+                            <strong>98%</strong>
+                            <span>Clientes satisfechos</span>
+                        </div>
+                        <div>
+                            <strong>25+</strong>
+                            <span>Profesionales</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ===================== MISIÓN Y VISIÓN ===================== -->
+        <section class="identity section" id="mision-vision" aria-labelledby="identity-title">
+            <div class="container">
+
+                <div class="section-header centered">
+                    <span class="section-label">QUIÉNES SOMOS</span>
+                    <h2 id="identity-title">Misión y visión</h2>
+                </div>
+
+                <div class="identity-grid">
+
+                    <article class="identity-card reveal">
+                        <span class="section-label">NUESTRA MISIÓN</span>
+                        <h3>Facilitar tu camino a casa</h3>
+                        <p>
+                            Somos una empresa dedicada a facilitar la compra, venta y arriendo de propiedades, ofreciendo información organizada y servicios inmobiliarios mediante herramientas digitales, con el propósito de ayudar a nuestros clientes a encontrar soluciones de vivienda de manera sencilla y segura.
+                        </p>
+                    </article>
+
+                    <article class="identity-card reveal">
+                        <span class="section-label">NUESTRA VISIÓN</span>
+                        <h3>Referentes en Medellín para 2030</h3>
+                        <p>
+                            Para el año 2030, CASA MUNDIAL será reconocida en Medellín por ofrecer servicios inmobiliarios apoyados en tecnología, destacándose por su facilidad de uso, atención al cliente, seguridad de los clientes y organización de la información y variedad de propiedades.
+                        </p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ===================== LLAMADO A LA ACCIÓN ===================== -->
+        <section class="cta" aria-labelledby="cta-title">
+            <div class="container cta-content">
+
+                <div>
+                    <span class="section-label">¿TIENES UNA PROPIEDAD?</span>
+
+                    <h2 id="cta-title">
+                        Publica tu casa en alquiler.
+                    </h2>
+
+                    <p>
+                        Envía los datos de tu casa. La revisaremos antes de
+                        publicarla en el catálogo.
+                    </p>
+                </div>
+
+                <button type="button" class="btn btn-light" id="publishPropertyButton">
+                    Publicar una casa
+                </button>
+
+            </div>
+        </section>
+
+
+        <!-- ===================== CONTACTO ===================== -->
+        <section class="contact section" id="contacto" aria-labelledby="contact-title">
+            <div class="container contact-grid">
+
+                <div class="contact-info">
+                    <span class="section-label">CONTÁCTANOS</span>
+
+                    <h2 id="contact-title">Hablemos de tu próximo proyecto.</h2>
+
+                    <p>
+                        Cuéntanos qué estás buscando y uno de nuestros
+                        asesores se pondrá en contacto contigo.
+                    </p>
+
+                    <div class="contact-item">
+                        <span aria-hidden="true">📞</span>
+                        <div>
+                            <strong>Teléfono</strong>
+                            <p>+57 300 000 0000</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <span aria-hidden="true">✉</span>
+                        <div>
+                            <strong>Email</strong>
+                            <p>casamundial@segurity.com</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <span aria-hidden="true">📍</span>
+                        <div>
+                            <strong>Oficina</strong>
+                            <p>Medellín, Antioquia</p>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contactForm">
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="contactName">Nombre</label>
+                            <input
+                                type="text"
+                                id="contactName"
+                                name="nombre"
+                                placeholder="Tu nombre"
+                                autocomplete="name"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactPhone">Teléfono</label>
+                            <input
+                                type="tel"
+                                id="contactPhone"
+                                name="telefono"
+                                placeholder="300 000 0000"
+                                autocomplete="tel"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactEmail">Correo electrónico</label>
+                        <input
+                            type="email"
+                            id="contactEmail"
+                            name="email"
+                            placeholder="correo@ejemplo.com"
+                            autocomplete="email"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactInterest">¿Qué te interesa?</label>
+                        <select id="contactInterest" name="interes">
+                            <option value="comprar">Comprar una propiedad</option>
+                            <option value="arrendar">Arrendar una propiedad</option>
+                            <option value="vender">Vender mi propiedad</option>
+                            <option value="asesoria">Asesoría inmobiliaria</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactMessage">Mensaje</label>
+                        <textarea
+                            id="contactMessage"
+                            name="mensaje"
+                            rows="4"
+                            placeholder="Cuéntanos más..."
+                        ></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary full-width">Enviar mensaje</button>
+
+                    <p class="form-feedback" id="contactFeedback" role="status" aria-live="polite"></p>
+
+                </form>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- ===================== PIE DE PÁGINA ===================== -->
+    <footer class="footer">
+        <div class="container footer-grid">
+
+            <div>
+                <a href="#inicio" class="logo footer-logo" aria-label="Casa Mundial, ir al inicio">
+                    <span class="logo-icon" aria-hidden="true">N</span>
+                    <span>Casa<span>Mundial</span></span>
+                </a>
+                <p>Te ayudamos a comprar, vender y arrendar con información clara y segura.</p>
+            </div>
+
+            <div>
+                <h3 class="footer-title">Navegación</h3>
+                <a href="#inicio">Inicio</a>
+                <a href="#propiedades">Propiedades</a>
+                <a href="#nosotros">Nosotros</a>
+            </div>
+
+            <div>
+                <h3 class="footer-title">Servicios</h3>
+                <a href="#servicios">Compra</a>
+                <a href="#servicios">Arriendo</a>
+                <a href="#contacto">Contacto</a>
+            </div>
+
+            <div>
+                <h3 class="footer-title">Síguenos</h3>
+                <div class="socials">
+                    <a href="#" aria-label="Facebook">f</a>
+                    <a href="#" aria-label="Instagram">ig</a>
+                    <a href="#" aria-label="LinkedIn">in</a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="container footer-bottom">
+            © <span id="currentYear">2026</span> Casa Mundial. Todos los derechos reservados.
+        </div>
+    </footer>
+
+
+    <!-- ===================== DIÁLOGO: DETALLE DE PROPIEDAD ===================== -->
+    <dialog class="dialog" id="propertyDialog" aria-label="Detalles de la propiedad">
+        <button type="button" class="dialog-close" data-close-dialog aria-label="Cerrar">&times;</button>
+        <div class="dialog-body" id="propertyDetail"></div>
+    </dialog>
+
+
+    <!-- ===================== DIÁLOGO: ACCESO ===================== -->
+    <dialog class="dialog dialog-auth" id="authDialog" aria-labelledby="authTitle">
+        <button type="button" class="dialog-close" data-close-dialog aria-label="Cerrar">&times;</button>
+
+        <div class="dialog-body">
+
+            <div class="role-switch" role="group" aria-label="Tipo de usuario">
+                <button type="button" data-rol="inquilino" aria-pressed="true">Soy inquilino / comprador</button>
+                <button type="button" data-rol="propietario" aria-pressed="false">Soy propietario</button>
+            </div>
+
+            <h2 id="authTitle">Acceso para inquilinos</h2>
+            <p class="auth-subtitle" id="authSubtitle">Encuentra tu próximo hogar</p>
+
+            <div class="auth-tabs" role="group" aria-label="Modo de acceso">
+                <button type="button" data-modo="login" aria-pressed="true">Iniciar sesión</button>
+                <button type="button" data-modo="registro" aria-pressed="false">Crear cuenta</button>
+            </div>
+
+            <form id="authForm" novalidate>
+
+                <div class="form-group" id="authNameGroup" hidden>
+                    <label for="authName">Nombre completo</label>
+                    <input
+                        type="text"
+                        id="authName"
+                        name="nombre"
+                        placeholder="Tu nombre completo"
+                        autocomplete="name"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="authEmail">Correo electrónico</label>
+                    <input
+                        type="email"
+                        id="authEmail"
+                        name="email"
+                        placeholder="correo@ejemplo.com"
+                        autocomplete="email"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="authPassword">Contraseña</label>
+                    <input
+                        type="password"
+                        id="authPassword"
+                        name="password"
+                        placeholder="••••••••"
+                        autocomplete="current-password"
+                        required
+                    >
+                </div>
+
+                <button type="submit" class="btn btn-primary full-width" id="authSubmit">
+                    Ingresar como inquilino
+                </button>
+
+                <p class="form-feedback" id="authFeedback" role="status" aria-live="polite"></p>
+
+            </form>
+        </div>
+    </dialog>
+
+    <!-- ===================== DIÁLOGO: PUBLICAR CASA ===================== -->
+    <dialog class="dialog dialog-listing" id="listingDialog" aria-labelledby="listingTitle">
+        <button type="button" class="dialog-close" data-close-dialog aria-label="Cerrar">&times;</button>
+
+        <div class="dialog-body">
+            <span class="section-label">PUBLICACIÓN DE ALQUILER</span>
+            <h2 id="listingTitle">Publica tu casa</h2>
+            <p class="listing-notice">
+                Completa la información. La publicación se guardará como pendiente
+                y aparecerá en el catálogo después de que la apruebes desde el panel.
+            </p>
+
+            <form id="listingForm">
+                <div class="form-group">
+                    <label for="listingTitleInput">Título</label>
+                    <input
+                        type="text"
+                        id="listingTitleInput"
+                        name="titulo"
+                        minlength="8"
+                        maxlength="150"
+                        placeholder="Casa familiar con patio en El Poblado"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="listingType">Tipo de casa</label>
+                    <select id="listingType" name="id_tipo" required>
+                        <option value="">Cargando tipos...</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="listingAddress">Dirección</label>
+                    <input
+                        type="text"
+                        id="listingAddress"
+                        name="direccion"
+                        minlength="5"
+                        maxlength="150"
+                        autocomplete="street-address"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="listingNeighborhood">Barrio y ciudad</label>
+                    <select id="listingNeighborhood" name="id_barrio" required>
+                        <option value="">Cargando ubicaciones...</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="listingDescription">Descripción</label>
+                    <textarea
+                        id="listingDescription"
+                        name="descripcion"
+                        rows="4"
+                        maxlength="4000"
+                        placeholder="Describe la casa y sus características."
+                    ></textarea>
+                </div>
+
+                <div class="listing-grid">
+                    <div class="form-group">
+                        <label for="listingRent">Canon mensual (COP)</label>
+                        <input
+                            type="number"
+                            id="listingRent"
+                            name="canon_mensual"
+                            min="1"
+                            step="0.01"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="listingDeposit">Depósito (COP)</label>
+                        <input
+                            type="number"
+                            id="listingDeposit"
+                            name="deposito"
+                            min="0"
+                            step="0.01"
+                            value="0"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="listingBedrooms">Habitaciones</label>
+                        <input
+                            type="number"
+                            id="listingBedrooms"
+                            name="habitaciones"
+                            min="0"
+                            max="255"
+                            value="0"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="listingBathrooms">Baños</label>
+                        <input
+                            type="number"
+                            id="listingBathrooms"
+                            name="banos"
+                            min="1"
+                            max="255"
+                            value="1"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="listingArea">Área (m²)</label>
+                        <input
+                            type="number"
+                            id="listingArea"
+                            name="area_m2"
+                            min="1"
+                            step="0.01"
+                            required
+                        >
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary full-width" id="listingSubmit">
+                    Enviar para revisión
+                </button>
+                <p class="form-feedback" id="listingFeedback" role="status" aria-live="polite"></p>
+            </form>
+        </div>
+    </dialog>
+
+</body>
+</html>
